@@ -6,7 +6,7 @@ export const site = {
 	tagline: 'Just write it down.',
 	description:
 		'Mote catches a thought in seconds on iPhone, iPad and Mac. Apple Intelligence sorts it into topics and links it to your calendar, on your device.',
-	url: 'https://mote-website.vercel.app',
+	url: 'https://mote-omega-dun.vercel.app',
 	// The app is one universal purchase; both badges lead to the same App Store page.
 	appStore: 'https://apps.apple.com/app/mote-notes/id0000000000',
 	macAppStore: 'https://apps.apple.com/app/mote-notes/id0000000000?platform=mac',
