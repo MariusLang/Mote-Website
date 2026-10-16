@@ -26,7 +26,8 @@
 
 		<h2>Contact</h2>
 		<p>
-			Email: {legal.email}{#if legal.phone}<br />Phone: {legal.phone}{/if}
+			Phone: <a href="tel:{legal.phone.replaceAll(' ', '')}">{legal.phone}</a><br />
+			Email: <a href="mailto:{legal.email}">{legal.email}</a>
 		</p>
 
 		<h2>Responsible for content</h2>
@@ -37,12 +38,19 @@
 			We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board.
 		</p>
 
-		<h2>Liability for content and links</h2>
+		<h2>Notice</h2>
 		<p>
-			We write the content of these pages with care but cannot guarantee that it is complete, correct and up to date. As a service provider we
-			are responsible for our own content under the general laws (§ 7(1) DDG). We are not obliged to monitor third-party information that is
-			transmitted or stored (§§ 8 to 10 DDG). This website links to external websites, such as Apple's App Store, whose content we do not
-			control. The respective provider is responsible for linked pages. If we become aware of any infringement, we will remove the link.
+			The content and information on our websites have been created with the greatest care, but we assume no liability for the accuracy,
+			completeness or timeliness of the data provided.
+		</p>
+		<p>
+			We assume no liability for the content of third-party websites that are made accessible via links on our websites. The operators or
+			owners are solely responsible for the content of the linked pages.
+		</p>
+		<p>Liability claims against the publisher resulting from damage caused by the use of the website are excluded.</p>
+		<p>
+			The use of contact details published as part of the information obligation by third parties to send unsolicited advertising and
+			information materials is hereby expressly prohibited.
 		</p>
 
 		<h2>Copyright</h2>

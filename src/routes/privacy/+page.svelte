@@ -35,7 +35,7 @@
 			{legal.street}<br />
 			{legal.city}<br />
 			{legal.country}<br />
-			Email: {legal.email}
+			Email: <a href="mailto:{legal.email}">{legal.email}</a>
 		</address>
 
 		<h2>2. The Mote app</h2>
@@ -153,7 +153,7 @@
 			<li>lodge a complaint with a supervisory authority (Art. 77), for example the authority of the German state where you live.</li>
 		</ul>
 		<p>
-			As we do not receive the content of the app, most requests concern only the website's server logs. Write to {legal.email} for any
+			As we do not receive the content of the app, most requests concern only the website's server logs. Write to <a href="mailto:{legal.email}">{legal.email}</a> for any
 			request.
 		</p>
 

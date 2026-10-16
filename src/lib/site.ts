@@ -1,5 +1,5 @@
 // Everything about the site that is not layout: store links and the legal details.
-// Values in `TODO` brackets must be filled in before the site goes public.
+// The App Store ID is still a placeholder until the app is live.
 
 export const site = {
 	name: 'Mote',
@@ -15,9 +15,9 @@ export const site = {
 
 export const legal = {
 	name: 'Marius Lang',
-	street: '[TODO street and number]',
-	city: '[TODO postcode and city]',
+	street: 'Hollergasse 9',
+	city: '96138 Burgebrach',
 	country: 'Germany',
-	email: '[TODO contact email]',
-	phone: '',
+	email: 'marius@mariuslang.de',
+	phone: '+49 160 95387755',
 };
