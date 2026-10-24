@@ -1,30 +1,20 @@
-@font-face {
-	font-family: 'Bricolage Grotesque';
-	font-weight: 200 800;
-	font-display: swap;
-	src: url('/fonts/BricolageGrotesque-latin.woff2') format('woff2');
-}
-
 :root {
-	--paper: #fff8ec;
-	--ink: #133524;
-	--ink2: #4a6655;
-	--green: #1b5e3b;
-	--green-l: #5fa77c;
-	--mint: #a6cdb2;
-	--hi: #f2cc4b;
-	--a: #e8833a;
-	--b: #3f7fb5;
-	--c: #9b6fb8;
-	--rose: #e58fa3;
-	--terra: #d8644f;
-	/* the page's colour world, moved by the stage while scrolling */
-	--bgA: #2e8556;
-	--bgB: #1b5e3b;
-	--gutter: clamp(16px, 4vw, 56px);
-	/* SF Pro on Apple devices (Mote is an Apple app); Bricolage Grotesque everywhere else */
-	--display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Bricolage Grotesque', system-ui, sans-serif;
-	--body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Bricolage Grotesque', system-ui, sans-serif;
+	--bg: #ffffff;
+	--bg-alt: #f5f5f7;
+	--ink: #1d1d1f;
+	--ink2: #6e6e73;
+	--line: #d2d2d7;
+	/* links and buttons; the app's own tint is --blue-app (AccentColor and the icon) */
+	--blue: #0071e3;
+	--blue-app: #0088ff;
+	--dark: #000000;
+	--dark-alt: #161617;
+	--dark-ink2: #a1a1a6;
+	--gutter: clamp(20px, 5vw, 48px);
+	--wide: 1120px;
+	--narrow: 760px;
+	/* SF Pro on Apple devices; the platform's own sans-serif elsewhere */
+	--sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', system-ui, sans-serif;
 	color-scheme: light;
 }
 
@@ -33,37 +23,42 @@
 }
 
 html {
-	background: var(--bgB);
+	background: var(--bg);
 	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 64px;
 }
 
 body {
 	margin: 0;
-	/* keep child margins inside, so the gradient covers the whole page */
-	display: flow-root;
-	min-height: 100svh;
-	font-family: var(--body);
-	font-size: 18px;
-	line-height: 1.5;
+	font-family: var(--sans);
+	font-size: 17px;
+	line-height: 1.47;
+	letter-spacing: -0.022em;
 	color: var(--ink);
-	background: linear-gradient(180deg, var(--bgA), var(--bgB)) fixed;
+	background: var(--bg);
 	overflow-x: clip;
 	-webkit-font-smoothing: antialiased;
 }
 
 img {
 	max-width: 100%;
+	height: auto;
 	display: block;
 }
 
 a {
-	color: inherit;
+	color: var(--blue);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
 }
 
 :focus-visible {
-	outline: 4px solid var(--hi);
+	outline: 3px solid var(--blue-app);
 	outline-offset: 3px;
-	border-radius: 8px;
+	border-radius: 6px;
 }
 
 .visually-hidden {
@@ -75,125 +70,123 @@ a {
 	white-space: nowrap;
 }
 
-/* Display headline: heavy, tight, calm */
-.headline {
-	font-family: var(--display);
-	font-weight: 800;
-	color: var(--head, var(--ink));
-	letter-spacing: -0.035em;
-	line-height: 0.98;
+/* Layout */
+.wrap {
+	width: min(var(--wide), 100% - 2 * var(--gutter));
+	margin-inline: auto;
+}
+.narrow {
+	width: min(var(--narrow), 100% - 2 * var(--gutter));
+	margin-inline: auto;
+}
+
+/* Type, after Apple's product pages */
+.eyebrow {
+	margin: 0 0 10px;
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: var(--ink2);
+}
+h1,
+h2,
+h3 {
 	margin: 0;
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	line-height: 1.07;
 }
-.headline .hi {
-	color: var(--head-hi, var(--green));
+.display {
+	font-size: clamp(44px, 7.5vw, 88px);
+	letter-spacing: -0.04em;
+	line-height: 1.04;
+}
+.title {
+	font-size: clamp(34px, 5vw, 56px);
+}
+.lead {
+	margin: 18px 0 0;
+	font-size: clamp(19px, 2vw, 24px);
+	line-height: 1.36;
+	letter-spacing: -0.02em;
+	color: var(--ink2);
+	font-weight: 500;
+}
+.lead b {
+	color: var(--ink);
+	font-weight: 600;
 }
 
-/* Frosted paper card with a soft shadow */
-.card {
-	background: rgb(255 248 236 / 0.88);
-	-webkit-backdrop-filter: blur(16px) saturate(1.2);
-	backdrop-filter: blur(16px) saturate(1.2);
-	border: 1px solid rgb(19 53 36 / 0.1);
-	border-radius: 28px;
-	box-shadow:
-		0 1px 0 rgb(255 255 255 / 0.6) inset,
-		0 30px 60px -24px rgb(14 58 38 / 0.38);
-	padding: clamp(22px, 3vw, 38px);
-}
-
-.pill {
+/* Buttons */
+.button {
 	display: inline-flex;
 	align-items: center;
-	gap: 10px;
-	background: var(--ink);
-	color: var(--paper);
-	border-radius: 999px;
-	padding: 6px 18px 6px 8px;
-	font-weight: 800;
-	font-size: 15px;
-	letter-spacing: 0.04em;
-	text-transform: uppercase;
-	white-space: nowrap;
+	gap: 6px;
+	padding: 11px 22px;
+	border-radius: 980px;
+	background: var(--blue);
+	color: #fff;
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	transition: background 0.2s ease;
 }
-.pill b {
-	background: var(--hi);
-	color: var(--ink);
-	border-radius: 999px;
-	padding: 2px 12px;
+.button:hover {
+	background: #0077ed;
+	text-decoration: none;
 }
-
-@media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.001ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.001ms !important;
-		scroll-behavior: auto !important;
-	}
+.more {
+	font-size: 17px;
+	font-weight: 500;
+}
+.more::after {
+	content: ' ›';
 }
 
-/* Entrance: lift and fade */
+/* Entrance: a short, calm fade */
 .reveal {
 	opacity: 0;
-	translate: 0 40px;
+	translate: 0 24px;
 	transition:
-		opacity 0.7s ease var(--delay, 0ms),
-		translate 0.9s cubic-bezier(0.2, 1.4, 0.4, 1) var(--delay, 0ms);
+		opacity 0.8s ease var(--delay, 0ms),
+		translate 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--delay, 0ms);
 }
 .reveal.in {
 	opacity: 1;
 	translate: 0 0;
 }
 
-/* Words that land one by one */
-.words .word {
-	display: inline-block;
-	opacity: 0;
-	transform: translateY(0.7em) scale(0.8);
-	transition:
-		opacity 0.3s ease calc(var(--i) * 28ms + 150ms),
-		transform 0.5s cubic-bezier(0.2, 1.8, 0.4, 1) calc(var(--i) * 28ms + 150ms);
-}
-.words.in .word {
-	opacity: 1;
-	transform: none;
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	.reveal {
+		opacity: 1;
+		translate: none;
+		transition: none;
+	}
 }
 
-/* Legal pages: one paper sheet on the colour backdrop */
+/* Legal pages */
 .doc {
-	position: relative;
-	z-index: 2;
-	max-width: 860px;
-	margin: 120px auto 60px;
-	padding: 0 var(--gutter);
-}
-.doc .sheet {
-	background: var(--paper);
-	border: 1px solid rgb(19 53 36 / 0.1);
-	border-radius: 32px;
-	box-shadow: 0 30px 60px -28px rgb(14 58 38 / 0.4);
-	padding: clamp(24px, 5vw, 60px);
+	padding: 120px 0 80px;
 }
 .doc h1 {
-	font-size: clamp(44px, 7vw, 84px);
-	margin-bottom: 10px;
+	font-size: clamp(40px, 6vw, 64px);
+	margin-bottom: 8px;
 }
 .doc h2 {
-	font-family: var(--display);
-	font-weight: 800;
-	letter-spacing: -0.02em;
 	font-size: clamp(24px, 3vw, 32px);
-	margin: 42px 0 10px;
+	margin: 48px 0 12px;
 	line-height: 1.15;
 }
 .doc h3 {
-	font-size: 20px;
-	margin: 26px 0 6px;
+	font-size: 21px;
+	letter-spacing: -0.02em;
+	margin: 30px 0 8px;
 }
 .doc p,
 .doc li {
-	font-size: 17px;
 	line-height: 1.6;
 }
 .doc ul {
@@ -201,14 +194,12 @@ a {
 }
 .doc .meta {
 	color: var(--ink2);
-	font-weight: 700;
-	margin: 0 0 24px;
+	margin: 0 0 28px;
 }
 .doc .summary {
-	background: var(--mint);
-	border-radius: 20px;
-	padding: 18px 22px;
-	font-weight: 600;
+	background: var(--bg-alt);
+	border-radius: 18px;
+	padding: 20px 24px;
 }
 .doc .summary ul {
 	margin: 8px 0 0;
@@ -223,17 +214,16 @@ a {
 .doc td {
 	text-align: left;
 	vertical-align: top;
-	padding: 10px 12px;
-	border-bottom: 2px solid rgb(19 53 36 / 0.12);
+	padding: 12px;
+	border-bottom: 1px solid var(--line);
 }
 .doc th {
-	font-weight: 800;
+	font-weight: 600;
 }
 .doc .table {
 	overflow-x: auto;
 }
 .doc address {
 	font-style: normal;
-	font-size: 18px;
 	line-height: 1.6;
 }

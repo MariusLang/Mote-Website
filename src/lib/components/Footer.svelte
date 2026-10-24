@@ -3,75 +3,54 @@
 </script>
 
 <footer>
-	<div class="row">
-		<a class="brand" href="/">
-			<img src="/favicon.svg" alt="" width="32" height="32" />
-			Mote
-		</a>
-		<nav aria-label="Legal">
-			<a href="/privacy">Privacy Policy</a>
-			<a href="/imprint">Imprint</a>
-		</nav>
-		<span class="copy">© 2026 {legal.name}</span>
+	<div class="wrap">
+		<p class="fine">
+			Apple, the Apple logo, iPhone, iPad, Mac, MacBook Air, iCloud, Apple Intelligence and Apple Pencil are trademarks of Apple Inc.,
+			registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.
+		</p>
+		<div class="row">
+			<span>Copyright © 2026 {legal.name}. All rights reserved.</span>
+			<nav aria-label="Legal">
+				<a href="/privacy">Privacy Policy</a>
+				<a href="/imprint">Imprint</a>
+				<a href="mailto:{legal.email}">Contact</a>
+			</nav>
+		</div>
 	</div>
-	<p class="fine">
-		Apple, the Apple logo, iPhone, iPad, Mac, iCloud and Apple Intelligence are trademarks of Apple Inc., registered in the
-		U.S. and other countries and regions. App Store is a service mark of Apple Inc.
-	</p>
 </footer>
 
 <style>
 	footer {
-		position: relative;
-		z-index: 2;
-		margin: 0 var(--gutter) 24px;
-		padding: 22px 26px;
-		background: var(--ink);
-		color: var(--paper);
-		border-radius: 28px;
+		background: var(--bg-alt);
+		color: var(--ink2);
+		font-size: 12px;
+		line-height: 1.4;
+		letter-spacing: -0.01em;
+		padding: 20px 0 24px;
+	}
+	.fine {
+		margin: 0 0 14px;
+		padding-bottom: 14px;
+		border-bottom: 1px solid var(--line);
 	}
 	.row {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
-		gap: 14px 28px;
-	}
-	.brand {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-family: var(--display);
-		font-size: 22px;
-		text-decoration: none;
-	}
-	.brand img {
-		border-radius: 9px;
+		justify-content: space-between;
+		gap: 8px 24px;
 	}
 	nav {
 		display: flex;
-		gap: 20px;
-		font-weight: 700;
+		gap: 0;
 	}
 	nav a {
-		text-decoration-thickness: 2px;
-		text-underline-offset: 4px;
-	}
-	nav a:hover {
-		color: var(--hi);
-	}
-	.copy {
-		margin-left: auto;
+		color: var(--ink);
 		opacity: 0.8;
+		padding: 0 10px;
+		border-left: 1px solid var(--line);
 	}
-	.fine {
-		margin: 14px 0 0;
-		font-size: 13px;
-		opacity: 0.65;
-		max-width: 80ch;
-	}
-	@media (max-width: 600px) {
-		.copy {
-			margin-left: 0;
-		}
+	nav a:first-child {
+		padding-left: 0;
+		border-left: 0;
 	}
 </style>

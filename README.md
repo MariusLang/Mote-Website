@@ -1,9 +1,8 @@
 # Mote website
 
 Marketing site for [Mote](https://github.com/MariusLang/Mote), the notes app for iPhone, iPad and Mac.
-SvelteKit with a three.js stage: one cel-shaded diorama per chapter on a ring of floating islands, the camera
-flies between them as you scroll. The style follows the Chronicler topic shorts; the devices are built from
-Apple's product bezels with the real app screens composited in.
+SvelteKit, no client libraries: plain sections in the style of Apple's product pages, real app screenshots in
+Apple's product bezels, a short fade as the only motion.
 
 ## Develop
 
@@ -20,26 +19,28 @@ pnpm build      # static pages + Vercel output
 
 | Path | What |
 | --- | --- |
-| `src/routes/+page.svelte` | Home: chapters, gallery, download |
+| `src/routes/+page.svelte` | Home: inbox, pages, tables, Apple Intelligence, calendar & reminders, mail, privacy, download |
 | `src/routes/privacy`, `src/routes/imprint` | Privacy policy and imprint |
-| `src/lib/site.ts` | Store links and legal details (fill in the `TODO` values) |
-| `src/lib/three/world.js` | Stations, camera poses, per-station animation |
-| `src/lib/three/kit.js` | Cel material and prefabs (devices, notes, furniture, nature) |
-| `src/lib/components/Stage.svelte` | Fixed canvas, scroll to camera mapping, colour worlds |
-| `src/lib/motion.ts` | Motion levels, GSAP ScrollTrigger and Lenis |
-| `static/shots/device` | iPhone and iPad screens composited into Apple's bezels |
-| `static/shots/screen` | Mac screen captures |
-| `static/shots/store` | App Store screenshots for the gallery |
+| `src/lib/site.ts` | Store links and legal details |
+| `src/lib/components/Device.svelte` | One framed screenshot from `static/shots` |
+| `scripts/shots.sh`, `scripts/frame.swift` | Build `static/shots` from raw screenshots and Apple's bezels |
+| `static/shots` | Framed device shots (`iphone-*`, `ipad-*`, `mac-*`) and cropped blocks (`card-*`) |
 
-Motion levels: desktop gets smooth scrolling, scrubbed scenes, letter animations and pointer parallax; phones and
-tablets get the 3D stage at a lower frame rate with time-driven loops and plain fades; `prefers-reduced-motion`
-gets still frames.
+## Screenshots
 
-In development, `window.__scene.overlaps()` lists props of a station whose boxes cut into each other.
+The shots are the real app with the UI-test seed data (`-uitest -seed showcase-en`, see `docs/BUILDING.md` and
+`Design/AppStore/README.md` in the app repo): iPhone 17 Pro Max and iPad Pro 13" (M5) simulators, and the Mac app
+with `-windowSize 1280x832` so the window fills the MacBook Air screen.
 
-## Fonts
+```sh
+scripts/shots.sh <raw dir> <bezel dir>
+```
 
-SF Pro via the system font stack on Apple devices; Bricolage Grotesque (SIL OFL, `static/fonts`) elsewhere.
+`<raw dir>` holds `iphone/`, `iphone-dark/`, `ipad/`, `ipad-dark/`, `mac/` and `mac-dark/`; the file names the
+script expects are listed in it. `<bezel dir>` holds Apple's product bezel PNGs from
+[Apple Design Resources](https://developer.apple.com/design/resources/#product-bezels). The bezels are not in this
+repo: each screenshot is composited into its bezel and published only as that one flattened image. Every `mac/*.png`
+becomes `static/shots/mac-<name>.webp` for `<Device kind="mac" name="<name>">`.
 
 ## Deploy
 

@@ -28,16 +28,12 @@
 		z-index: 50;
 		top: -60px;
 		left: 16px;
-		background: var(--paper);
+		background: var(--bg);
 		padding: 10px 16px;
-		border-radius: 12px;
-		font-weight: 800;
+		border-radius: 10px;
+		font-weight: 600;
 	}
 	.skip:focus {
-		top: 16px;
-	}
-	main {
-		position: relative;
-		z-index: 1;
+		top: 12px;
 	}
 </style>

@@ -3,8 +3,6 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	// three.js is one lazy chunk of about 800 kB; it loads after the page is up
-	build: { chunkSizeWarningLimit: 900 },
 	plugins: [
 		sveltekit({
 			compilerOptions: {
