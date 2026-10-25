@@ -59,7 +59,7 @@
 	</div>
 	<div class="hero-stage wrap">
 		<Device kind="mac" name="inbox" alt="Mote on a MacBook Air: the inbox as a chat next to the sidebar with pages and tables" eager class="hero-mac" />
-		<Device kind="iphone" name="reading" alt="Mote on iPhone: the page “Reading” with a book table embedded" eager class="hero-iphone" />
+		<Device kind="iphone" name="launch" alt="Mote on iPhone: the page “Atlas 2.0 launch” with goals, to-dos and the roadmap table" eager class="hero-iphone" />
 	</div>
 </section>
 
@@ -78,7 +78,7 @@
 			</ul>
 		</div>
 		<div class="media" use:reveal={120}>
-			<Device kind="iphone" name="inbox" alt="The Mote inbox on iPhone with notes, a checklist and filing suggestions" class="phone" />
+			<Device kind="iphone" name="inbox" alt="The Mote inbox on iPhone: work and seminar notes, a to-do and filing suggestions" class="phone" />
 		</div>
 	</div>
 </section>
@@ -89,13 +89,13 @@
 		<p class="eyebrow">Pages</p>
 		<h2 id="pages-title" class="title">Pages within pages.</h2>
 		<p class="lead">
-			Give every part of your life a page, and every detail a subpage. Build them from blocks, link them together, and keep them in the sidebar
+			Give every project, client and course a page, and every detail a subpage. Build them from blocks, link them together, and keep them in the sidebar
 			you arrange yourself.
 		</p>
 	</div>
 	<div class="duo wrap" use:reveal={100}>
 		<Device kind="iphone" name="pages" alt="The page list on iPhone: favourites, pages, tables, the graph and the trash" class="phone" />
-		<Device kind="iphone" name="seminar" alt="A page on iPhone with headings, checked to-dos, bullet points, a quote and subpage links" class="phone" />
+		<Device kind="iphone" name="seminar" alt="The page “AI Seminar” on iPhone with deadlines, notes, a quote and links to its subpages" class="phone" />
 	</div>
 	<ul class="grid wrap">
 		{#each pageFeatures as [title, text], i (title)}
@@ -116,13 +116,13 @@
 			<p class="lead">
 				On iPad, a drawing is just another block. Pick up Apple Pencil and sketch between your notes, <b>no mode to switch, no other app.</b>
 			</p>
-			<img class="drawing-card" src="/shots/card-drawing.webp" alt="A drawing block: three hand-drawn examples of proximity, similarity and closure, an arrow and a check mark" width="1200" height="593" loading="lazy" />
+			<img class="drawing-card" src="/shots/card-drawing.webp" alt="A drawing block: a hand-drawn diagram of how retrieval-augmented generation works, from question to answer with sources" width="1200" height="593" loading="lazy" />
 			<ul class="checks">
 				{#each pencil as [title, text] (title)}<li><b>{title}</b> {text}</li>{/each}
 			</ul>
 		</div>
 		<div class="media" use:reveal={120}>
-			<Device kind="ipad" name="talk" alt="A page on iPad with a drawing block: a sketch of proximity, similarity and closure for a talk" class="tablet" />
+			<Device kind="ipad" name="talk" alt="The page “RAG talk” on iPad: an outline and a hand-drawn diagram for a slide" class="tablet" />
 		</div>
 	</div>
 </section>
@@ -133,13 +133,13 @@
 		<p class="eyebrow">Tables</p>
 		<h2 id="tables-title" class="title">Tables, kept simple.</h2>
 		<p class="lead">
-			A reading list, job applications, a packing list. A table is a small database of its own: <b>text, numbers, dates, choices, checkboxes,
+			A product roadmap, a hiring pipeline, a reading list. A table is a small database of its own: <b>text, numbers, dates, choices, checkboxes,
 				links, events and mail.</b> Sort it, filter it, see it as a grid or a list. Every row opens as a page.
 		</p>
 	</div>
 	<div class="tables-stage wrap" use:reveal={100}>
-		<Device kind="mac" name="tables-dark" alt="The table “Books” on a MacBook Air in dark mode, with author, status and page count" class="tables-mac" />
-		<Device kind="iphone" name="books-dark" alt="The same table on iPhone in dark mode" class="tables-iphone" />
+		<Device kind="mac" name="roadmap-dark" alt="The table “Roadmap” on a MacBook Air in dark mode, with owner, status and due date" class="tables-mac" />
+		<Device kind="iphone" name="books-dark" alt="The table “Books” on iPhone in dark mode, with author and status" class="tables-iphone" />
 	</div>
 	<p class="narrow center note" use:reveal>Embed the same table on as many pages as you like. Change it in one place, and it changes everywhere.</p>
 </section>
@@ -165,7 +165,7 @@
 			</p>
 		</div>
 		<div class="media" use:reveal={120}>
-			<Device kind="iphone" name="ask" alt="Search on iPhone: an answer to “What do I need for the viewing?” with the notes it came from" class="phone" />
+			<Device kind="iphone" name="ask" alt="Search on iPhone: an answer to “What do I need for the kickoff?” with the notes it came from" class="phone" />
 		</div>
 	</div>
 </section>
@@ -179,11 +179,11 @@
 	</div>
 	<div class="wrap split cal">
 		<div class="media" use:reveal>
-			<Device kind="iphone" name="viewing" alt="The page “Apartment viewing” with today’s event, a mail from the landlord, questions and two reminders" class="phone" />
+			<Device kind="iphone" name="kickoff" alt="The page “Kickoff with Northwind” with tomorrow’s event, a mail from the client, the agenda and two reminders" class="phone" />
 		</div>
 		<div class="cards">
 			<article class="card" use:reveal>
-				<img src="/shots/card-event.webp" alt="An event block: Apartment viewing, today 2:00 to 3:00 PM, 5 Main Street" width="1174" height="228" loading="lazy" />
+				<img src="/shots/card-event.webp" alt="An event block: Kickoff with Northwind, tomorrow 10:00 to 11:30 AM, Northwind HQ" width="1136" height="188" loading="lazy" />
 				<h3>Notes find their meeting</h3>
 				<p>
 					Write something during a lecture or a meeting, and Mote links it to that event. Put events on a page as live blocks, or give a table an
@@ -191,7 +191,7 @@
 				</p>
 			</article>
 			<article class="card" use:reveal={80}>
-				<img src="/shots/card-reminders.webp" alt="Two reminder blocks: Transfer the deposit, and Pick up moving boxes" width="1174" height="333" loading="lazy" />
+				<img src="/shots/card-reminders.webp" alt="Two reminder blocks: Send the proposal draft, and Book a room for the workshop" width="1136" height="284" loading="lazy" />
 				<h3>Reminders on the page</h3>
 				<p>
 					Pull in a reminder or create one right where you are writing. Check it off on the page or in Reminders, and both stay in step.
@@ -208,8 +208,8 @@
 		<div class="copy" use:reveal>
 			<p class="eyebrow">Mail</p>
 			<h2 id="mail-title" class="title">Mail, right where it belongs.</h2>
-			<p class="lead">The confirmation, the landlord’s answer, the ticket. Keep the mails that matter next to the notes they belong to.</p>
-			<img class="mail-card" src="/shots/card-mail.webp" alt="A mail card: Viewing on Saturday – documents, from Anna Becker, with two attachments" width="1174" height="258" loading="lazy" />
+			<p class="lead">The client’s reply, the booking confirmation, the invoice. Keep the mails that matter next to the notes they belong to.</p>
+			<img class="mail-card" src="/shots/card-mail.webp" alt="A mail card: Kickoff: agenda and project brief, from Sarah Chen, with two attachments" width="1136" height="210" loading="lazy" />
 			<ul class="checks">
 				<li><b>Drag a mail from Apple Mail</b> into the inbox or onto any page. It becomes a card with sender, subject, a preview and the attachments.</li>
 				<li><b>Pick senders once,</b> and on the Mac the Mote extension for Mail drops their mails into your inbox on its own.</li>
@@ -218,7 +218,7 @@
 			</ul>
 		</div>
 		<div class="media" use:reveal={120}>
-			<Device kind="iphone" name="mail" alt="The Mote inbox on iPhone with a mail card among the notes" class="phone" />
+			<Device kind="iphone" name="mail" alt="The Mote inbox on iPhone with the client’s mail as a card below the notes" class="phone" />
 		</div>
 	</div>
 </section>
@@ -262,8 +262,8 @@
 		</p>
 	</div>
 	<div class="everywhere-stage wrap" use:reveal={100}>
-		<Device kind="ipad" name="viewing" alt="The page “Apartment viewing” on iPad, next to the sidebar with all pages and tables" class="ev-ipad" />
-		<Device kind="iphone" name="viewing-dark" alt="The same page on iPhone in dark mode" class="ev-iphone" />
+		<Device kind="ipad" name="kickoff" alt="The page “Kickoff with Northwind” on iPad, next to the sidebar with all pages and tables" class="ev-ipad" />
+		<Device kind="iphone" name="kickoff-dark" alt="The same page on iPhone in dark mode" class="ev-iphone" />
 	</div>
 </section>
 

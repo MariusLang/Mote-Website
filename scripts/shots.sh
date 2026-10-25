@@ -47,25 +47,25 @@ mkdir -p $OUT
 [[ -d $RAW/iphone ]] && {
   iphone iphone/01-inbox.png iphone-inbox
   iphone iphone/02-pages.png iphone-pages
-  iphone iphone/03-reading.png iphone-reading
+  iphone iphone/03-launch.png iphone-launch
   iphone iphone/04-seminar.png iphone-seminar
   iphone iphone/05-ask.png iphone-ask
-  iphone iphone/06-viewing.png iphone-viewing
+  iphone iphone/06-kickoff.png iphone-kickoff
   iphone iphone/07-mail.png iphone-mail
 }
 [[ -d $RAW/iphone-dark ]] && {
   iphone iphone-dark/03-books.png iphone-books-dark
-  iphone iphone-dark/06-viewing.png iphone-viewing-dark
+  iphone iphone-dark/06-kickoff.png iphone-kickoff-dark
 }
 [[ -d $RAW/ipad ]] && {
-  ipad ipad/04-viewing.png ipad-viewing
+  ipad ipad/04-kickoff.png ipad-kickoff
   ipad ipad/08-talk.png ipad-talk
-  # The drawing block of "Talk", inside its card border.
-  crop ipad/08-talk.png 676 627 1352 667 card-drawing 1200
-  # Cards for the integrations: the event, the mail and the reminders of "Apartment viewing" (iPad, 2x).
-  crop ipad/04-viewing.png 650 424 1174 228 card-event 1174
-  crop ipad/04-viewing.png 650 732 1174 258 card-mail 1174
-  crop ipad/04-viewing.png 650 1387 1174 333 card-reminders 1174
+  # Cards for the integrations: the event, the mail and the reminders of "Kickoff with Northwind" (iPad, 2x).
+  crop ipad/04-kickoff.png 664 450 1136 188 card-event 1136
+  crop ipad/04-kickoff.png 664 766 1136 210 card-mail 1136
+  crop ipad/04-kickoff.png 664 1420 1136 284 card-reminders 1136
+  # The drawing block of "RAG talk", inside its card border.
+  crop ipad/08-talk.png 676 744 1352 667 card-drawing 1200
 }
 [[ -d $RAW/mac ]] && for f in $RAW/mac/*.png; do mac mac/${f:t} mac-${${f:t:r}#[0-9][0-9]-}; done
 [[ -d $RAW/mac-dark ]] && for f in $RAW/mac-dark/*.png; do mac mac-dark/${f:t} mac-${${f:t:r}#[0-9][0-9]-}-dark 1C1C1E; done

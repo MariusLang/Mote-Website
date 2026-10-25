@@ -28,9 +28,10 @@ pnpm build      # static pages + Vercel output
 
 ## Screenshots
 
-The shots are the real app with the UI-test seed data (`-uitest -seed showcase-en`, see `docs/BUILDING.md` and
-`Design/AppStore/README.md` in the app repo): iPhone 17 Pro Max and iPad Pro 13" (M5) simulators, and the Mac app
-with `-windowSize 1280x795` so the window fills the MacBook Air screen below the menu bar.
+The shots are the real app with the UI-test seed data (`-uitest -seed website`, the inbox shot `-seed website-inbox`;
+the scenario is `UITestWebsite.swift` in the app repo, how to shoot is in `Design/AppStore/README.md` there): iPhone 17
+Pro Max and iPad Pro 13" (M5) simulators, and the Mac app with `-windowSize 1280x795` so the window fills the MacBook Air
+screen below the menu bar. The drawing on "RAG talk" is generated from the single-stroke font EMS Elfin (SIL OFL).
 
 ```sh
 scripts/shots.sh <raw dir> <bezel dir>
