@@ -2,6 +2,7 @@
 	const links: [string, string][] = [
 		['/#inbox', 'Inbox'],
 		['/#pages', 'Pages'],
+		['/#pencil', 'Apple Pencil'],
 		['/#intelligence', 'Intelligence'],
 		['/#calendar', 'Calendar'],
 		['/#mail', 'Mail'],

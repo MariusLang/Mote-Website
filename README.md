@@ -19,7 +19,7 @@ pnpm build      # static pages + Vercel output
 
 | Path | What |
 | --- | --- |
-| `src/routes/+page.svelte` | Home: inbox, pages, tables, Apple Intelligence, calendar & reminders, mail, privacy, download |
+| `src/routes/+page.svelte` | Home: inbox, pages, Apple Pencil, tables, Apple Intelligence, calendar & reminders, mail, privacy, download |
 | `src/routes/privacy`, `src/routes/imprint` | Privacy policy and imprint |
 | `src/lib/site.ts` | Store links and legal details |
 | `src/lib/components/Device.svelte` | One framed screenshot from `static/shots` |
@@ -30,13 +30,13 @@ pnpm build      # static pages + Vercel output
 
 The shots are the real app with the UI-test seed data (`-uitest -seed showcase-en`, see `docs/BUILDING.md` and
 `Design/AppStore/README.md` in the app repo): iPhone 17 Pro Max and iPad Pro 13" (M5) simulators, and the Mac app
-with `-windowSize 1280x832` so the window fills the MacBook Air screen.
+with `-windowSize 1280x795` so the window fills the MacBook Air screen below the menu bar.
 
 ```sh
 scripts/shots.sh <raw dir> <bezel dir>
 ```
 
-`<raw dir>` holds `iphone/`, `iphone-dark/`, `ipad/`, `ipad-dark/`, `mac/` and `mac-dark/`; the file names the
+`<raw dir>` holds `iphone/`, `iphone-dark/`, `ipad/`, `mac/` and `mac-dark/`; the file names the
 script expects are listed in it. `<bezel dir>` holds Apple's product bezel PNGs from
 [Apple Design Resources](https://developer.apple.com/design/resources/#product-bezels). The bezels are not in this
 repo: each screenshot is composited into its bezel and published only as that one flattened image. Every `mac/*.png`

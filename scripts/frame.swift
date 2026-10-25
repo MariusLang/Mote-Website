@@ -1,5 +1,6 @@
-// usage: frame <bezel.png> <shot.png> <out.png> <x> <y> <w> <h> <rTL> <rTR> <rBR> <rBL> [backdrop hex]
+// usage: frame <bezel.png> <shot.png> <out.png> <x> <y> <w> <h> <rTL> <rTR> <rBR> <rBL> [backdrop hex] [top inset]
 // Draws the screenshot into the screen rect (clipped to rounded corners), then the bezel on top.
+// The top inset (px) leaves the backdrop showing above the shot, as the Mac's menu bar around the notch.
 import AppKit
 import CoreGraphics
 import ImageIO
@@ -43,9 +44,10 @@ func draw(_ img: CGImage, in rect: CGRect) {
     ctx.draw(img, in: CGRect(x: 0, y: 0, width: rect.width, height: rect.height))
     ctx.restoreGState()
 }
-// The shot fills the screen width, top aligned (a Mac window may be shorter than the screen).
+// The shot fills the screen width, top aligned below the inset (a Mac window may be shorter than the screen).
+let inset = a.count > 13 ? CGFloat(Double(a[13])!) : 0
 let scale = r.width / CGFloat(shot.width)
-draw(shot, in: CGRect(x: r.minX, y: r.minY, width: r.width, height: CGFloat(shot.height) * scale))
+draw(shot, in: CGRect(x: r.minX, y: r.minY + inset, width: r.width, height: CGFloat(shot.height) * scale))
 ctx.restoreGState()
 draw(bezel, in: CGRect(x: 0, y: 0, width: W, height: H))
 let out = ctx.makeImage()!

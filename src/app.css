@@ -117,24 +117,7 @@ h3 {
 	font-weight: 600;
 }
 
-/* Buttons */
-.button {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	padding: 11px 22px;
-	border-radius: 980px;
-	background: var(--blue);
-	color: #fff;
-	font-size: 17px;
-	font-weight: 500;
-	letter-spacing: -0.01em;
-	transition: background 0.2s ease;
-}
-.button:hover {
-	background: #0077ed;
-	text-decoration: none;
-}
+/* Links */
 .more {
 	font-size: 17px;
 	font-weight: 500;

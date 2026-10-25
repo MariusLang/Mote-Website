@@ -10,9 +10,16 @@
 		['Blocks for everything', 'Headings, lists, to-dos, quotes, code, images, video, PDFs and simple tables. Each block can take a colour.'],
 		['Links both ways', 'Type [[ to link a page. Every page lists what links to it, and the graph shows how it all hangs together.'],
 		['Markdown in and out', 'Shortcuts as you type, Markdown when you paste, and every page exports as a .md file.'],
-		['Draw with Apple Pencil', 'Sketch right on the page on iPad, or open an endless board. Mote even reads your handwriting.'],
+		['History for every page', 'Mote keeps earlier versions of a page. Look back at any of them and restore it with one tap.'],
 		['Tabs on iPad and Mac', 'Keep several pages open side by side and jump between them with ⌃Tab.'],
 		['Folders and web links', 'Link a folder on your Mac, a NAS or iCloud Drive, or drop a web link and Mote fetches its title.'],
+	];
+
+	const pencil = [
+		['Draws in place.', 'Apple Pencil draws, your finger scrolls the page. Turn on finger drawing when you want it.'],
+		['An endless board.', 'Open a drawing full screen and keep going in every direction, with the pens, markers and colours you know.'],
+		['Handwriting you can search.', 'Mote reads what you write, so a scribbled word turns up in search.'],
+		['On iPhone and Mac too.', 'Drawings sync through iCloud. Tap one on iPhone or click it on the Mac to open the same board.'],
 	];
 
 	const intelligence = [
@@ -51,7 +58,7 @@
 		<p class="platforms">For iPhone, iPad and Mac</p>
 	</div>
 	<div class="hero-stage wrap">
-		<Device kind="ipad" name="inbox" alt="Mote on iPad: the inbox as a chat next to the sidebar with pages and tables" eager class="hero-ipad" />
+		<Device kind="mac" name="inbox" alt="Mote on a MacBook Air: the inbox as a chat next to the sidebar with pages and tables" eager class="hero-mac" />
 		<Device kind="iphone" name="reading" alt="Mote on iPhone: the page “Reading” with a book table embedded" eager class="hero-iphone" />
 	</div>
 </section>
@@ -100,6 +107,26 @@
 	</ul>
 </section>
 
+<!-- Apple Pencil -->
+<section id="pencil" class="band alt" aria-labelledby="pencil-title">
+	<div class="wrap split reverse">
+		<div class="copy" use:reveal>
+			<p class="eyebrow">Apple Pencil</p>
+			<h2 id="pencil-title" class="title">Draw right on the page.</h2>
+			<p class="lead">
+				On iPad, a drawing is just another block. Pick up Apple Pencil and sketch between your notes, <b>no mode to switch, no other app.</b>
+			</p>
+			<img class="drawing-card" src="/shots/card-drawing.webp" alt="A drawing block: three hand-drawn examples of proximity, similarity and closure, an arrow and a check mark" width="1200" height="593" loading="lazy" />
+			<ul class="checks">
+				{#each pencil as [title, text] (title)}<li><b>{title}</b> {text}</li>{/each}
+			</ul>
+		</div>
+		<div class="media" use:reveal={120}>
+			<Device kind="ipad" name="talk" alt="A page on iPad with a drawing block: a sketch of proximity, similarity and closure for a talk" class="tablet" />
+		</div>
+	</div>
+</section>
+
 <!-- Tables -->
 <section id="tables" class="band dark" aria-labelledby="tables-title">
 	<div class="narrow center" use:reveal>
@@ -111,7 +138,7 @@
 		</p>
 	</div>
 	<div class="tables-stage wrap" use:reveal={100}>
-		<Device kind="ipad" name="books-dark" alt="The table “Books” on iPad in dark mode, with author, status and page count" class="tables-ipad" />
+		<Device kind="mac" name="tables-dark" alt="The table “Books” on a MacBook Air in dark mode, with author, status and page count" class="tables-mac" />
 		<Device kind="iphone" name="books-dark" alt="The same table on iPhone in dark mode" class="tables-iphone" />
 	</div>
 	<p class="narrow center note" use:reveal>Embed the same table on as many pages as you like. Change it in one place, and it changes everywhere.</p>
@@ -278,23 +305,20 @@
 	}
 	.hero-stage {
 		position: relative;
-		margin-top: clamp(48px, 7vw, 80px);
+		margin-top: clamp(32px, 5vw, 56px);
+		padding-bottom: clamp(32px, 5vw, 64px);
 		display: flex;
 		justify-content: center;
-		align-items: flex-end;
-		/* the devices run off the bottom edge, like a product shot */
-		height: clamp(380px, 62vw, 760px);
 	}
-	.hero-stage :global(.hero-ipad) {
-		width: min(640px, 72%);
-		translate: -12% 0;
-		align-self: flex-start;
+	.hero-stage :global(.hero-mac) {
+		width: min(1000px, 92%);
+		translate: -5% 0;
 	}
 	.hero-stage :global(.hero-iphone) {
 		position: absolute;
-		width: min(290px, 31%);
-		left: 58%;
-		top: 18%;
+		width: min(220px, 21%);
+		left: 74%;
+		bottom: clamp(24px, 4vw, 48px);
 	}
 
 	/* Bands */
@@ -335,6 +359,9 @@
 	.media :global(.phone),
 	.duo :global(.phone) {
 		width: min(330px, 80vw);
+	}
+	.media :global(.tablet) {
+		width: min(500px, 100%);
 	}
 
 	/* Inbox */
@@ -410,15 +437,15 @@
 		display: flex;
 		justify-content: center;
 	}
-	.tables-stage :global(.tables-ipad) {
-		width: min(620px, 74%);
-		translate: -10% 0;
+	.tables-stage :global(.tables-mac) {
+		width: min(940px, 88%);
+		translate: -5% 0;
 	}
 	.tables-stage :global(.tables-iphone) {
 		position: absolute;
-		width: min(270px, 30%);
-		left: 60%;
-		bottom: -4%;
+		width: min(210px, 20%);
+		left: 73%;
+		bottom: -2%;
 	}
 	.tables-stage :global(.device),
 	.everywhere-stage :global(.ev-iphone) {
@@ -509,6 +536,14 @@
 		color: var(--ink2);
 	}
 
+	/* Apple Pencil */
+	.drawing-card {
+		margin: 28px 0 0;
+		border-radius: 14px;
+		border: 1px solid #e5e5ea;
+		background: #fff;
+	}
+
 	/* Mail */
 	.mail-card {
 		margin: 28px 0 0;
@@ -591,20 +626,20 @@
 		.duo :global(.phone) {
 			width: 46%;
 		}
-		.hero-stage :global(.hero-ipad) {
-			width: 84%;
-			translate: -8% 0;
+		.hero-stage :global(.hero-mac),
+		.tables-stage :global(.tables-mac) {
+			width: 100%;
+			translate: -6% 0;
 		}
-		.hero-stage :global(.hero-iphone) {
-			width: 38%;
-			left: 56%;
+		.hero-stage :global(.hero-iphone),
+		.tables-stage :global(.tables-iphone) {
+			width: 26%;
+			left: 72%;
 		}
-		.tables-stage :global(.tables-ipad),
 		.everywhere-stage :global(.ev-ipad) {
 			width: 84%;
 			translate: -8% 0;
 		}
-		.tables-stage :global(.tables-iphone),
 		.everywhere-stage :global(.ev-iphone) {
 			width: 36%;
 			left: 58%;

@@ -53,8 +53,8 @@
 		<h2>Copyright</h2>
 		<p>
 			Texts, graphics and screenshots on this website are subject to German copyright law. The device images are Apple product bezels, used
-			under Apple’s terms to show the app. Apple, the Apple logo, iPhone, iPad, Mac, MacBook Air, iCloud and Apple Intelligence are trademarks of
-			Apple Inc.
+			under Apple’s terms to show the app. Apple, the Apple logo, iPhone, iPad, Mac, MacBook Air, iCloud, Apple Intelligence and Apple Pencil
+			are trademarks of Apple Inc.
 		</p>
 	</div>
 </article>
