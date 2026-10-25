@@ -5,12 +5,12 @@ export const site = {
 	name: 'Mote',
 	tagline: 'Just write it down.',
 	description:
-		'Mote catches a thought in seconds on iPhone, iPad and Mac. Apple Intelligence sorts it into topics and links it to your calendar, on your device.',
+		'Mote is the notes app that tidies up after you. Catch a thought in seconds on iPhone, iPad and Mac, and Apple Intelligence files it into your pages and tables, on your device.',
 	url: 'https://mote-omega-dun.vercel.app',
 	// The app is one universal purchase; both badges lead to the same App Store page.
 	appStore: 'https://apps.apple.com/app/mote-notes/id0000000000',
 	macAppStore: 'https://apps.apple.com/app/mote-notes/id0000000000?platform=mac',
-	updated: 'October 15, 2026',
+	updated: 'October 25, 2026',
 };
 
 export const legal = {

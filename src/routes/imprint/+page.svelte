@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Shapes from '#lib/components/Shapes.svelte';
 	import { legal, site } from '#lib/site.ts';
 </script>
 
@@ -9,11 +8,9 @@
 	<link rel="canonical" href="{site.url}/imprint" />
 </svelte:head>
 
-<Shapes count={10} opacity={0.3} />
-
-<article class="doc" lang="en">
-	<div class="sheet">
-		<h1 class="headline">Imprint</h1>
+<article class="doc narrow" lang="en">
+	<div>
+		<h1>Imprint</h1>
 		<p class="meta">Legal notice (Impressum) under § 5 DDG</p>
 
 		<h2>Provider</h2>
@@ -55,8 +52,9 @@
 
 		<h2>Copyright</h2>
 		<p>
-			Texts, graphics and screenshots on this website are subject to German copyright law. On devices other than Apple’s, the font Bricolage Grotesque is used
-			under the SIL Open Font License. Apple, the Apple logo, iPhone, iPad, Mac, iCloud and Apple Intelligence are trademarks of Apple Inc.
+			Texts, graphics and screenshots on this website are subject to German copyright law. The device images are Apple product bezels, used
+			under Apple’s terms to show the app. Apple, the Apple logo, iPhone, iPad, Mac, MacBook Air, iCloud, Apple Intelligence and Apple Pencil
+			are trademarks of Apple Inc.
 		</p>
 	</div>
 </article>
