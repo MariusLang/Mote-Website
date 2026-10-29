@@ -16,6 +16,7 @@ RAW=${1:A}; BEZ=${2:A}
 ROOT=${0:A:h:h}; OUT=$ROOT/static/shots
 TMP=$(mktemp -d); trap 'rm -rf $TMP' EXIT
 swiftc -O $ROOT/scripts/frame.swift -o $TMP/frame
+swiftc -O $ROOT/scripts/menubar.swift -o $TMP/menubar
 
 webp() { cwebp -quiet -q ${3:-82} -resize $2 0 $1 -o $OUT/$4.webp; }
 # A raw shot that is missing is skipped, so a single device can be shot again on its own.
@@ -31,10 +32,11 @@ ipad() {
   $TMP/frame $BEZ/ipadpro13-spaceblack.png $RAW/$1 $TMP/f.png 118 124 2064 2752 52 52 52 52
   webp $TMP/f.png 1200 82 $2
 }
-mac() { # <raw png> <name> [menu bar hex]
+mac() { # <raw png> <name> [menu bar hex] [light|dark]
   have $1 || return 0
   # the window sits below the 37 pt menu bar, which the notch cuts into
   $TMP/frame $BEZ/macbookair13-midnight.png $RAW/$1 $TMP/f.png 420 288 2560 1664 30 30 0 0 ${3:-E8E8ED} 74
+  $TMP/menubar $TMP/f.png $TMP/f.png 420 288 2560 74 ${4:-light}
   webp $TMP/f.png 2000 84 $2
 }
 crop() { # <raw png> <x> <y> <w> <h> <name> <width>
@@ -68,5 +70,5 @@ mkdir -p $OUT
   crop ipad/08-talk.png 676 744 1352 667 card-drawing 1200
 }
 [[ -d $RAW/mac ]] && for f in $RAW/mac/*.png; do mac mac/${f:t} mac-${${f:t:r}#[0-9][0-9]-}; done
-[[ -d $RAW/mac-dark ]] && for f in $RAW/mac-dark/*.png; do mac mac-dark/${f:t} mac-${${f:t:r}#[0-9][0-9]-}-dark 1C1C1E; done
+[[ -d $RAW/mac-dark ]] && for f in $RAW/mac-dark/*.png; do mac mac-dark/${f:t} mac-${${f:t:r}#[0-9][0-9]-}-dark 1C1C1E dark; done
 ls -la $OUT
