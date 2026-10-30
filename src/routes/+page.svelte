@@ -208,17 +208,18 @@
 		<div class="copy" use:reveal>
 			<p class="eyebrow">Mail</p>
 			<h2 id="mail-title" class="title">Mail, right where it belongs.</h2>
-			<p class="lead">The client’s reply, the booking confirmation, the invoice. Keep the mails that matter next to the notes they belong to.</p>
+			<p class="lead">The client’s reply, the booking confirmation, the invoice. Mail gets its own list in your inbox, apart from what you typed, so you can sort it in one pass and keep what matters next to the notes it belongs to.</p>
 			<img class="mail-card" src="/shots/card-mail.webp" alt="A mail card: Kickoff: agenda and project brief, from Sarah Chen, with two attachments" width="1136" height="210" loading="lazy" />
 			<ul class="checks">
-				<li><b>Drag a mail from Apple Mail</b> into the inbox or onto any page. It becomes a card with sender, subject, a preview and the attachments.</li>
+				<li><b>Review it like Mail.</b> Sender, subject and a preview at a glance. Tap to read, then file it where Mote suggests or pick a page yourself.</li>
+				<li><b>Drag a mail from Apple Mail</b> into the inbox or onto any page. On a page it becomes a card with sender, subject, a preview and the attachments.</li>
 				<li><b>Pick senders once,</b> and on the Mac the Mote extension for Mail drops their mails into your inbox on its own.</li>
 				<li><b>Share a mail to Mote</b> on iPhone and iPad.</li>
 				<li><b>A Mail column</b> turns any table into a tracker for applications, orders or support tickets.</li>
 			</ul>
 		</div>
 		<div class="media" use:reveal={120}>
-			<Device kind="iphone" name="mail" alt="The Mote inbox on iPhone with the client’s mail as a card below the notes" class="phone" />
+			<Device kind="iphone" name="mail" alt="The Mail list of the Mote inbox on iPhone: three mails with sender, subject, a preview and a filing suggestion, next to a switch between Notes and Mail" class="phone" />
 		</div>
 	</div>
 </section>
