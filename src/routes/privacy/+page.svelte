@@ -19,7 +19,7 @@
 				<li>The Mote app collects no personal data. We have no servers that receive your notes and no account system.</li>
 				<li>Your notes, pages, tables and attachments are stored on your devices and, if you use iCloud, in your private iCloud database. We cannot read them.</li>
 				<li>Filing suggestions, calendar matching, answers and writing help run on your device with Apple Intelligence. No note is sent to an AI service in the cloud.</li>
-				<li>The app contains no analytics, no advertising and no tracking. This website sets no cookies and uses no analytics.</li>
+				<li>The app contains no analytics, no advertising and no tracking. This website sets no cookies and only counts page views anonymously, without tracking you.</li>
 			</ul>
 		</div>
 
@@ -155,9 +155,19 @@
 			the EU–US Data Privacy Framework, which provides the safeguard for transfers to the USA (Art. 45 GDPR). See the
 			<a href="https://vercel.com/legal/privacy-policy" rel="noopener">Vercel Privacy Policy</a>.
 		</p>
-		<h3>3.2 No cookies, no analytics, no external content</h3>
+		<h3>3.2 Anonymous page-view statistics</h3>
 		<p>
-			This website sets no cookies, uses no analytics or tracking, and loads no content from other servers: images and scripts are
+			To understand which pages are read, this website uses Vercel Web Analytics, provided by Vercel Inc. (address above). It sets no
+			cookies and stores nothing on your device. When you open a page, the page path, referrer, approximate location (country), browser,
+			operating system and device type are recorded. To tell visits apart, Vercel derives a short-lived identifier from a hash of the
+			request that is discarded after 24 hours; no IP address is stored and visitors cannot be identified or followed across websites. The
+			legal basis is our legitimate interest in improving the website (Art. 6(1)(f) GDPR). The same data processing agreement and EU–US Data
+			Privacy Framework safeguard as for hosting apply. See
+			<a href="https://vercel.com/docs/analytics/privacy-policy" rel="noopener">Vercel Web Analytics privacy and compliance</a>.
+		</p>
+		<h3>3.3 No cookies, no external content</h3>
+		<p>
+			This website sets no cookies and loads no content from other servers: images and scripts, including the statistics script, are
 			served from this website itself. The App Store badges link to Apple; once you follow such a link, Apple's privacy policy applies.
 		</p>
 
