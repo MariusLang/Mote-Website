@@ -10,7 +10,7 @@ export const site = {
 	// The app is one universal purchase; both badges lead to the same App Store page.
 	appStore: 'https://apps.apple.com/app/mote-notes/id0000000000',
 	macAppStore: 'https://apps.apple.com/app/mote-notes/id0000000000?platform=mac',
-	updated: 'October 25, 2026',
+	updated: 'October 31, 2026',
 };
 
 export const legal = {
